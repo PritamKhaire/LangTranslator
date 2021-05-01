@@ -49,7 +49,7 @@ def preprocessing(sentence, language = False):
 def create_dataset(file_name):
   file_name.english = file_name.english.apply(lambda x : preprocessing(x, False))
   file_name.marathi = file_name.marathi.apply(lambda x : preprocessing(x, True))
-  return file_name.english, file_name.marathi
+  return file_name.marathi, file_name.english
 
 def tokenize(lang):
   lang_tokenizer = tf.keras.preprocessing.text.Tokenizer(filters='')
